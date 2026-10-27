@@ -71,8 +71,15 @@ def count_trainable_parameters(model):
 def trainable_fraction(trainable_count, total_count):
     return float(trainable_count)/float(total_count)
 
-# Step 9 - build_instruction_examples (not yet solved)
-# TODO: implement
+# Step 9 - build_instruction_examples
+def build_instruction_examples():
+    """Return a small list of {'instruction', 'response'} dicts for SFT."""
+    return [
+        {"instruction": "What is 2 + 2?", "response": "2 + 2 equals 4."},
+        {"instruction": "Name a primary color.", "response": "Red is a primary color."},
+        {"instruction": "What is the capital of France?", "response": "The capital of France is Paris."},
+        {"instruction": "What language runs in the browser?", "response": "JavaScript runs natively in the browser."}
+    ]
 
 # Step 10 - format_instruction_example (not yet solved)
 # TODO: implement
