@@ -103,8 +103,10 @@ def tokenize_text(tokenizer, text):
     """Tokenize a single string and return a list[int] of input ids."""
     return tokenizer(text).input_ids
 
-# Step 14 - count_tokens (not yet solved)
-# TODO: implement
+# Step 14 - count_tokens
+def count_tokens(input_ids):
+    """Return the number of tokens in a tokenized example."""
+    return len(input_ids)
 
 # Step 15 - build_training_arguments (not yet solved)
 # TODO: implement
