@@ -154,8 +154,21 @@ def run_sft_training(trainer):
     final_loss = train_result.metrics.get("train_loss")
     return float(final_loss)
 
-# Step 18 - switch_to_inference_mode (not yet solved)
-# TODO: implement
+# Step 18 - switch_to_inference_mode
+def switch_to_inference_mode(model):
+    """Switch the LoRA-tuned model into Unsloth's fast inference mode and return it."""
+    # Fast inference can be enabled using Unsloth's built-in helper method
+    if hasattr(model, "fast_inference"):
+        model.fast_inference = True
+    elif hasattr(model, "FastLanguageModel"):
+        # Alternatively, use FastLanguageModel for inference mode if exposed
+        pass
+        
+    # Unsloth models typically use FastLanguageModel.for_inference(model)
+    from unsloth import FastLanguageModel
+    FastLanguageModel.for_inference(model)
+    
+    return model
 
 # Step 19 - build_chat_prompt (not yet solved)
 # TODO: implement
